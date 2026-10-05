@@ -1,14 +1,17 @@
 arr = [1,0,0,1,0,1,1,0,1,0,1]
 print(f"Original list: {arr}")
-balance = 0
-first_seen = {0: -1}
-longest = 0
 
-for i, value in enumerate(arr):
-    balance += 1 if value == 1 else -1
-    if balance in first_seen:
-        longest = max(longest, i - first_seen[balance])
-    else:
-        first_seen[balance] = i
+count = 0
 
-print("Longest subarray with equal 0s and 1s:", longest)
+for i in range(len(arr)):
+    sum = 0
+
+    for j in range(i, len(arr)):
+        if arr[j] == 0:
+            sum -= 1
+        if arr[j] == 1:
+            sum += 1
+        if sum == 0:
+            count += 1
+
+print(f"Number of sub-lists having equal 0's and 1's: {count}")

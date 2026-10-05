@@ -15,4 +15,3 @@ while left < len(arr) and right < len(arr):
         if current_sum == target:
                 print(f"Subarray found from index {left} to {right-1}")
                 break
-    
