@@ -1,5 +1,5 @@
 str1 = "listen"
-str2 = "silents"
+str2 = "silent"
 
 freq1 = {}
 freq2 = {}
