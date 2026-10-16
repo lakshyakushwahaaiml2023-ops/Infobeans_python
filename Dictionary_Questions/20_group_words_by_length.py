@@ -1,10 +1,13 @@
 words = ["Lakshya", "Diksha", "Riya", "Ishant", "Krishna", "Ram", "Sam", "Kate", "Mike"]
-res = {}
+# res = {}
 
-for i in words:
-    key = len(i)
-    if key in res:
-        res[key].append(i)
-    else:
-        res[key] = [i]
+# for i in words:
+#     key = len(i)
+#     if key in res:
+#         res[key].append(i)
+#     else:
+#         res[key] = [i]
+# print(res)
+
+res = {len(i) : [j for j in words if len(i) == len(j)] for i in words}
 print(res)
