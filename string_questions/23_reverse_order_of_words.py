@@ -1,6 +1,10 @@
 def reverse_words(string):
-    return " ".join(string.split()[::-1])
+    words = string.split()[::-1]
+    ans = ""
+    for i in words:
+        ans += i + " "
+    return ans
 
 
-string = "Lakshya is learning Python"
+string = "Lakshya is playing games"
 print(reverse_words(string))
