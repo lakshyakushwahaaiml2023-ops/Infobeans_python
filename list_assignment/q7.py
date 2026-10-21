@@ -2,7 +2,7 @@ arr = [1, 2, 3, 7, 5,12,23,111]
 left = 0
 right = 0
 current_sum = 0
-target = 13
+target = 10
 
 while left < len(arr) and right < len(arr):
     current_sum += arr[right]
