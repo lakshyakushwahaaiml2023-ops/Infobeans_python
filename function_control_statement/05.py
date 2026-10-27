@@ -10,3 +10,15 @@ Requirements
 •	Display the final result.
 Bonus: Add easy, medium, and hard difficulty levels with different attempt limits
 '''
+import random
+
+def generate_num(func):
+    def wrap():
+        a = random.randint(0-100)
+        return func(a)
+    return wrap
+
+@generate_num
+def guess_game(num):
+    count = 7
+    while True:

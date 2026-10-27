@@ -10,3 +10,5 @@ Requirements
 •	Calculate the final bill, including tax.
 Bonus: Add coupon codes and repeat-order functionality.
 '''
+
+def restraunt()
