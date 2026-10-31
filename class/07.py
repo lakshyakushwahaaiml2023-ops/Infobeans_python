@@ -26,7 +26,7 @@ class Collection:
         author = input("Enter Author name: ")
         isbn = input("Enter ISBN no. : ")
         b = Book(name, author, isbn)
-        self.__collection[name] = [f"Author: {author}", f"ISBN : {isbn}"]
+        self.__collection[name] = b
 
     def remove_book(self):
         name = input("Enter Book Name to Remove: ")
@@ -38,8 +38,8 @@ class Collection:
 
     def view_collection(self):
         print(f"{self.__name}'s Book Collection: ")
-        for key, value in self.__collection:
-            print(f"{key} ==> {value}")
+        for book in self.__collection:
+            self.__collection[book].view_details()
         print()
 
 c1 = Collection()
@@ -50,4 +50,3 @@ c1.add_book()
 c1.view_collection()
 c1.remove_book()
 c1.view_collection()
-
