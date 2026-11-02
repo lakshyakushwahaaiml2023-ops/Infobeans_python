@@ -74,4 +74,8 @@ r.show_menu()
 r.remove_dish("Naan")
 r.show_menu()
 r.average_rating()
+<<<<<<< HEAD
   
+=======
+  
+>>>>>>> ebba63c1d01b427f775976e66707b97feb2ba5ea

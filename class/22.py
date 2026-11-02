@@ -474,4 +474,8 @@ a1.cancel_hotel(email, password, 5001)
 a1.view_bookings(email, password)
 
 a1.view_flight(101)
+<<<<<<< HEAD
 a1.view_hotel("Taj Palace")
+=======
+a1.view_hotel("Taj Palace")
+>>>>>>> ebba63c1d01b427f775976e66707b97feb2ba5ea
