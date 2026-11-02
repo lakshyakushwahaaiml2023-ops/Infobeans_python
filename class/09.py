@@ -1,33 +1,78 @@
-'''9. Write a Java program to create a class called "Employee" with a name, salary, a
-nd hire date attributes, and a method to calculate years of service.
+'''
+7. Write a Java program to create a class called "Bank" with a collection of accounts and methods to add 
+and remove accounts, and to deposit and withdraw money. Also define a class called "Account" to maintain account 
+details of a particular customer.
 '''
 
-from datetime import date
+class Account:
+    def __init__(self):
+        self.__acno = ""
+        self.__name = ""
+        self.__money = 0
 
-class Employee:
-    def __init__(self, n, s):
-        self.__name = n
-        self.__salary = s
-        self.__joinDate = date.today()
+    def set_details(self, acno, name):
+        self.__acno = acno
+        self.__name = name
 
-    def set_hire_date(self):
-        day = int(input("Day: "))
-        mon = int(input("Month: "))
-        year = int(input("Year: "))
-        self.__joinDate = date(year, mon, day)
+    def withdrawAmnt(self, amnt):
+        if amnt > self.__money:
+            print("Insufficient Balance")
+        else:
+            self.__money -= amnt
+            print(f"Amount of {amnt} Rs withdrawn")
 
-    def calc_yos(self):
-        years = date.today().year - self.__joinDate.year
-        if (date.today().month, date.today().day) < (self.__joinDate.month, self.__joinDate.day):
-            years -= 1
-        return years
+    def depositAmnt(self, amnt):
+        self.__money += amnt
+        print(f"Amount of {amnt} Rs deposited")
 
-    def view_details(self):
-        print(f"Name: {self.__name}")
-        print(f"Salary: {self.__salary} Rs")
-        print(f"Joining Date: {self.__joinDate}")
-        print(f"Years of Service: {self.calc_yos()}")
+    def balance_enquiry(self):
+        print(f"Account Number: {self.__acno}")
+        print(f"Account Holder: {self.__name}")
+        print(f"Current Balance: {self.__money}")
+        print("="*40)
 
-e1 = Employee("Lakshya", 100000)
-e1.set_hire_date()
-e1.view_details()
+
+class Bank:
+    def __init__(self):
+        self.__accounts = {}
+
+    def add_account(self, acno, name):
+        if acno in self.__accounts:
+            print("Account number already exists in the records")
+        else:
+            a1 = Account()
+            a1.set_details(acno, name)
+            self.__accounts[acno] = a1
+            print("Account added to the Bank")
+
+    def remove_account(self, acno):
+        if acno not in self.__accounts:
+            print(f"there is no account associated with Account Number : {acno}")
+        else:
+            print("Account removed from the bank")
+            self.__accounts.pop(acno)
+
+    def withdraw(self, acno, amnt):
+        if acno not in self.__accounts:
+            print(f"there is no account associated with Account Number : {acno}")
+        else:
+            self.__accounts[acno].withdrawAmnt(amnt)
+
+    def deposit(self, acno, amnt):
+        if acno not in self.__accounts:
+            print(f"there is no account associated with Account Number : {acno}")
+        else:
+            self.__accounts[acno].depositAmnt(amnt)
+
+    def view_account(self, acno):
+        if acno not in self.__accounts:
+            print(f"there is no account associated with Account Number : {acno}")
+        else:
+            print(self.__accounts[acno].balance_enquiry())
+        print(self.__accounts)
+
+b1 = Bank()
+b1.add_account(1001, "Lakshya")
+b1.deposit(1001, 12000)
+b1.withdraw(1001, 123)
+b1.view_account("Lakshya")           

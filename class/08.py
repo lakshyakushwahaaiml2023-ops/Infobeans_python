@@ -1,38 +1,34 @@
-'''8. Write a Java program to create class called "TrafficLight" with attributes for color and duration, 
-and methods to change the color and check for red or green.
+'''6. Write a Java program to create a class called "Employee" with a name, job title, and salary attributes, 
+and methods to calculate and update salary.
 '''
-import time
 
-class TrafficLight:
-    def __init__(self):
-        self.__color = "Red"
-        self.__duration = 0
+class Employee:
+    def __init__(self, n, s, j):
+        self.__name = n
+        self.__salary = s
+        self.__job_title = j
 
-    def change_color(self):
-        if self.__color == "Red":
-            self.__color = "Yellow"
-        elif self.__color == "Yellow":
-            self.__color = "Green"
-        elif self.__color == "Green":
-            self.__color = "Red"
+    def calc_salary(self):
+        if self.__job_title == "Manager":
+            self.__salary = 100000
+        if self.__job_title == "Employee":
+            self.__salary = 25000
+        if self.__job_title == "CEO":
+            self.__salary = 150000
+        if self.__job_title == "Owner":
+            self.__salary = 250000
 
-    def set_duration(self, d):
-        self.__duration = d
+    def update_salary(self, sal):
+        self.__salary = sal
 
-    def working(self):
-        count = 0
-        while count <= 5:
-            self.change_color()
-            print(self.__color,"...")
-            print()
-            for sec in range(1, self.__duration + 1):
-                print(sec, end = " ")
-                time.sleep(1)
-            print()
-            
-            count += 1
-        print(self.__color,"...")
+    def view_details(self):
+        print(f"Name: {self.__name}")
+        print(f"Job title: {self.__job_title}")
+        print(f"Salary: {self.__salary} Rs")
 
-t1 = TrafficLight()
-t1.set_duration(5)
-t1.working()
+e1 = Employee("Lakshya", 120000, "Manager")
+e1.view_details()
+e1.calc_salary()
+e1.view_details()
+e1.update_salary(150000)
+e1.view_details()
