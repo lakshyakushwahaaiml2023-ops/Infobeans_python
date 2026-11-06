@@ -62,7 +62,7 @@ class Account:
     return hash(self.__acno)
 
   def __eq__(self, other):
-    return self.__acno == other.acno
+    return self.__acno == other.__acno
 
     
   
