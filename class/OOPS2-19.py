@@ -52,6 +52,7 @@ class Flight:
                 self.__seats[i].book_seat()
                 self.__booked_seats += 1
                 count -= 1
+                self.__cancelled_seats.remove(i)
             for i in range(count):
                 self.__seats[Flight.__seat_no].book_seat()
                 Flight.__seat_no += 1
