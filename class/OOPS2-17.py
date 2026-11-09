@@ -31,6 +31,7 @@ class Consumer:
 
 class EBS:
   __cost_per_unit = 14
+  __surcharge = 5
   
   def __init__(self):
     self.__consumers = {}
@@ -48,7 +49,13 @@ class EBS:
       return None
     else:
       units = self.__consumers[c_id].get_units()
-      return units * EBS.__cost_per_unit
+      bill = units * EBS.__cost_per_unit
+      final = EBS.calculate_surcharge(bill, EBS.__surcharge)
+      return f"{bill} + 5% Surcharge --> Final Amount: {final : .2f}"
+
+  @staticmethod
+  def calculate_surcharge(bill, sur):
+    return bill + (bill * sur)/100
 
   def add_units(self, c_id, units):
     if c_id not in self.__consumers:
@@ -61,7 +68,7 @@ class EBS:
     if c_id not in self.__consumers:
       print("Consumer does not exists in data!!!")
     else:
-      print(f"{self.__consumers[c_id]} --> {self.calculate_bill(c_id)} Rs")
+      print(f"{self.__consumers[c_id]} --> {self.calculate_bill(c_id)}")
 
 e = EBS()
 e.add_consumer(1001, "Lakshya")
