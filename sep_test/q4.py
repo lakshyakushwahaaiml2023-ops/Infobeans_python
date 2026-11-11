@@ -2,7 +2,7 @@ start = int(input("Enter start: "))
 end = int(input("Enter end: "))
 count = 0
 for i in range(start, end+1):
-    for j in range(2,i):
+    for j in range(2,i//2 + 1):
         if i%j == 0:
             break
     else:
