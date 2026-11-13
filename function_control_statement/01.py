@@ -44,12 +44,14 @@ def mul(a, b):
     return a * b
 
 @take_input
+@greater_first
 def div(a, b):
     if b == 0:
         return "Cannot divide by zero"
     return a / b
 
 @take_input
+@greater_first
 def mod(a, b):
     if b == 0:
         return "Cannot perform modulus by zero"
@@ -62,6 +64,7 @@ def power(a, b):
 
 
 @take_input
+@greater_first
 def floor_div(a, b):
     if b == 0:
         return "Cannot perform floor division by zero"
