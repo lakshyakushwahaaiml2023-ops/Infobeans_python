@@ -93,8 +93,3 @@ for key, value in students.items():
     for elements, vals in value.items():
         print(f"{elements} : {vals}")
     print("==============================================================")
-
-
-
-    
-    

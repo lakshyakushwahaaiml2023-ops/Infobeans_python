@@ -11,6 +11,7 @@ for ch in sen:
         else:
             res[word] = 1
         word = ""
+
 if word in res:
     res[word] += 1
 else:
