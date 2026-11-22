@@ -12,7 +12,7 @@ Dropbox'''
 
 from abc import ABC, abstractmethod
 
-class Cloud:
+class Cloud(ABC):
   @abstractmethod
   def upload():
     pass
