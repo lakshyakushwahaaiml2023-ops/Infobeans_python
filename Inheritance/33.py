@@ -13,7 +13,7 @@ SmartAC'''
 
 from abc import ABC, abstractmethod
 
-class SmartDevice:
+class SmartDevice(ABC):
   @abstractmethod
   def turn_on():
     pass
