@@ -8,4 +8,4 @@ def prefix_strs(strs):
     return prefix
 
 strs = ["flower","flow","flight", "cat"]
-print(prefix_strs(strs))
+print(prefix_strs(strs)) 

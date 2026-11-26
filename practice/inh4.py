@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 
 class A(ABC):
 
+    
+
     @abstractmethod
     def func(self):
         print("A called")
