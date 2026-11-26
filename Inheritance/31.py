@@ -10,6 +10,7 @@ Circle
 Rectangle
 Line'''
 
+import time
 from abc import ABC, abstractmethod
 
 class Shape(ABC):
@@ -28,6 +29,7 @@ class Circle(Shape):
           print("*", end=" ")
         else:
           print(" ", end=" ")
+      time.sleep(1)
 
       print()
 class Rectangle(Shape):
